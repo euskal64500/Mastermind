@@ -17,12 +17,12 @@ describe('Peg related tests', function () {
     });
   });
 
-  GuessIds.reverse().forEach(GuessId => {
-    it.only(`verify that ${GuessId} color changes when clicked`, function () {
-      const pegColor = browser.getText(`~${GuessId}`);
-      expect(pegColor).to.equal('transparent');
-      browser.touchAction(`~${GuessId}`, 'tap');
-      expect(pegColor).to.equal('blue');
-    });
-  });
+  // GuessIds.reverse().forEach(GuessId => {
+  //   it.only(`verify that ${GuessId} color changes when clicked`, function () {
+  //     const pegColor = browser.getText(`~${GuessId}`);
+  //     expect(pegColor).to.equal('transparent');
+  //     browser.touchAction(`~${GuessId}`, 'tap');
+  //     expect(pegColor).to.equal('blue');
+  //   });
+  // });
 });
