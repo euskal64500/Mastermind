@@ -1,0 +1,14 @@
+{
+  "javascriptEnabled": true,
+  "locationContextEnabled": true,
+  "handlesAlerts":true, 
+  "rotatable":false,
+  "platformName": "iOS",
+  "platformVersion": "10.2",
+  "deviceName": "iPhone 6",
+  "orientation": "PORTRAIT",
+  "automationName": "XCUITest",
+  "appiumVersion": "1.7.2",
+  "newCommandTimeout": 0,
+  "app": "/Users/origaut/ReactProjects/Mastermind/dist/ios-simulator/Mastermind.app"
+}

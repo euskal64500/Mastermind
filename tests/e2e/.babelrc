@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "react-native"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["../../tests"],
+      "extensions": [".js", ".ios.js", ".android.js"],
+      "alias": {
+        "e2e": "./tests/e2e",
+        "pages": "./tests/e2e/pages",
+        "smoke": "./tests/e2e/smoke",
+        "regression": "./tests/e2e/regression"
+      }
+    }]
+  ]
+}
