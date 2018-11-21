@@ -92,7 +92,7 @@ exports.config = {
   sync: true,
   //
   // Level of logging verbosity: silent | verbose | command | data | result | error
-  logLevel: 'verbose',
+  logLevel: 'error',
   //
   // Enables colors for log output.
   coloredLogs: true,
@@ -140,25 +140,25 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  // services: ['appium'],
-  // appium: {
-  //   waitStartTime: 6000,
-  //   logFileName: 'appium.log',
-  //   args: {
-  //     address: '127.0.0.1',
-  //     port: 4723,
-  //     commandTimeout: '7200',
-  //     sessionOverride: true,
-  //     debugLogSpacing: true,
-  //     platformVersion: '12.1',
-  //     platformName: 'iOS',
-  //     showIosLog: true,
-  //     deviceName: 'iPhone X',
-  //     nativeInstrumentsLib: true,
-  //     isolateSimDevice: true,
-  //     app: path.join(__dirname, '../../dist/ios-simulator/Mastermind.app')
-  //   }
-  // },
+  services: ['appium'],
+  appium: {
+    waitStartTime: 30000,
+    logFileName: 'appium.log',
+    args: {
+      address: '127.0.0.1',
+      port: 4723,
+      commandTimeout: '7200',
+      sessionOverride: true,
+      debugLogSpacing: true,
+      platformVersion: '12.1',
+      platformName: 'iOS',
+      showIosLog: true,
+      deviceName: 'iPhone X',
+      nativeInstrumentsLib: true,
+      isolateSimDevice: true,
+      app: path.join(__dirname, '../../dist/ios-simulator/Mastermind.app')
+    }
+  },
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -176,7 +176,6 @@ exports.config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: 'bdd',
-    compilers: ['js:babel-register'],
     timeout: 600000
   },
   //
@@ -226,9 +225,7 @@ exports.config = {
   // Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
   beforeTest(test) {
     console.info();
-    console.log('info', '******************************** TEST CASE ********************************');
-    console.log('info', `TITLE: ${test.title}`);
-    console.log('info', '***************************************************************************');
+    console.log(`TC: ${test.title} *********************`);
     console.info();
   },
   //
