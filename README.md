@@ -11,7 +11,7 @@ Steps to install:
 - clone the repo
 
 ```bash
-git clone https://github.sie.sony.com/origaut/Mastermind.git
+git clone https://github.com/euskal64500/Mastermind.git
 ```
 
 - install the libraries
@@ -29,20 +29,28 @@ react-native link react-native-vector-icons
 - Run the app for ios on the latest ios device
 
 ```bash
-react-native run-ios --simulator="iPhone 6"
+react-native run-ios
 ```
 
 - Run the app on a specific ios device
 
 ```bash
-react-native run-ios
+react-native run-ios --simulator="iPhone 6"
+```
+
+Note: by default, react-native uses port 8081 to load the bundle. This port is commonly used by other apps like docker. So either stop the other apps or run the command on a different port:
+
+```bash
+react-native run-ios --port 8082
 ```
 
 ## Explanation on the code
 
-### Containers
+### Components
 
-#### Intro
+![Alt text](./docs/Components.png?raw=true "Component map")
+
+### Containers
 
 Each react-native component is wrapped into a container. The role of this container is to map redux store data with the react-native component properties and to dispatch actions. It uses 2 redux functions:
 
@@ -89,12 +97,6 @@ const updateStatus = (state = initialGameStatus, action) => {
   }
 };
 ```
-
-### Components
-
-#### Sketch
-
-![Alt text](./docs/Components.png?raw=true "Component map")
 
 #### Debugging the app
 
@@ -156,3 +158,14 @@ react-native run-ios --port 8082
 
 https://facebook.github.io/react-native/docs/troubleshooting#content
 
+
+- If you see the following issue in the simulator: 
+
+"No bundle URL present. Make sure you're running a packager server or have included a .jsbundle file in your application bundle."
+
+- Go to the ios folder 
+- delete the build folder
+- run again
+```bash
+react-native run-ios
+```
