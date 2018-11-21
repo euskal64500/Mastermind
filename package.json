@@ -1,0 +1,86 @@
+{
+  "name": "Mastermind",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build:bundle": "scripts/react-native-bundle.sh",
+    "build:ios": "time scripts/ios/build-ios.sh",
+    "build:ios:qa": "XCODE_SCHEME='Mastermind_QA' time scripts/ios/build-ios.sh",
+    "build:ios-sim": "time scripts/ios/build-ios-sim.sh -sdk iphonesimulator12.1",
+    "build:ios-sim:qa": "XCODE_SCHEME='Mastermind_QA' time scripts/ios/build-ios-sim.sh -sdk iphonesimulator12.1",
+    "build:android": "time scripts/android/build-android.sh",
+    "build:android:prod": "time scripts/android/build-android.sh --clean --production",
+    "install:android": "adb install -r dist/android/Mastermind.apk",
+    "install:ios": "ideviceinstaller -i dist/ios/Mastermind.ipa",
+    "show:sdk": "scripts/ios/show-ios-sdk.sh",
+    "lint": "eslint .",
+    "e2e": "wdio ./tests/e2e/wdio.conf.js",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "xcode": "open ios/Mastermind.xcodeproj"
+  },
+  "nyc": {
+    "statements": 80,
+    "branches": 80,
+    "functions": 80,
+    "lines": 80,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "vendor/**/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "extension": [
+      ".js"
+    ],
+    "sourceMap": false,
+    "instrument": false,
+    "cache": false,
+    "all": true,
+    "check-coverage": false,
+    "report-dir": "coverage"
+  },
+  "dependencies": {
+    "babel-eslint": "^10.0.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.6.0-alpha.8af6728",
+    "react-native": "^0.57.3",
+    "react-native-config": "^0.11.5",
+    "react-native-vector-icons": "^6.0.2",
+    "react-redux": "^5.0.6",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "save-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "appium": "^1.7.2",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "chai": "^4.1.2",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-mocha": "^5.2.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-react-native": "^3.2.1",
+    "eslint-plugin-webdriverio": "^1.0.1",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "^0.48.1",
+    "react-test-renderer": "16.6.0-alpha.8af6728",
+    "wdio-appium-service": "^0.2.3",
+    "wdio-junit-reporter": "^0.4.4",
+    "wdio-mocha-framework": "^0.6.3",
+    "wdio-sauce-service": "^0.4.7",
+    "wdio-spec-reporter": "^0.1.3",
+    "webdriverio": "^4.10.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
