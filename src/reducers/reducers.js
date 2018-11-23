@@ -370,3 +370,5 @@ export const gameApp = combineReducers({
   solution: updateSolution,
   game: updateStatus
 });
+
+export const COLORS_SET = COLORS;

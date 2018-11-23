@@ -225,8 +225,10 @@ exports.config = {
   // Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
   beforeTest(test) {
     console.info();
-    console.log(`TC: ${test.title} *********************`);
-    console.info();
+    console.log('**********************************');
+    console.log(`TC: ${test.title}`);
+    console.log('Reseting the game btw each test...');
+    browser.touchAction('~restart', 'tap');
   },
   //
   // Runs before a WebdriverIO command gets executed.
@@ -243,7 +245,7 @@ exports.config = {
       console.debug(test.err.message);
     }
     const success = (test.passed) ? 'PASSED' : 'FAILED';
-    console.info(`------------------------------- ${success} -------------------------------`);
+    console.info(`----> ${success}`);
   }
   // Hook that gets executed after the suite has ended
   // afterSuite: function (suite) {

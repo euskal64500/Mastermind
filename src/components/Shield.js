@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/Entypo';
 import {
   StyleSheet,
+  Text,
   TouchableOpacity,
   View
 } from 'react-native';
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
 const Shield = ({ open, code, onUnlock }) => {
   if (open) {
     return (
-      <View style={[styles.container, { backgroundColor: '#F27777' }]} >
+      <View {...testIdProp('openShield')} style={[styles.container, { backgroundColor: '#F27777' }]}>
         <Peg bgColor={code[0]} style={styles.peg} />
         <Peg bgColor={code[1]} style={styles.peg} />
         <Peg bgColor={code[2]} style={styles.peg} />

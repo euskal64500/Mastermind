@@ -20,10 +20,11 @@ git clone https://github.com/euskal64500/Mastermind.git
 npm install
 ```
 
-- Install the icon libraries. (Should be done only once)
+- Link dependency libraries. (Should be done only once)
 
 ```bash
 react-native link react-native-vector-icons
+react-native link react-native-config
 ```
 
 - Run the app for ios on the latest ios device
