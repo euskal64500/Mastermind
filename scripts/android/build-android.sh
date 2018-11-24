@@ -40,7 +40,7 @@ if [ "${PROD}" == false ]; then
   ././gradlew assembleRelease
   # Copy apk from working dir to the out dir
   cd ../
-  cp ${BUILD_DIR}/app/build/outputs/apk/app-release.apk ${OUT_DIR}/${NAME}.apk
+  cp ${BUILD_DIR}/app/build/outputs/apk/release/app-release-unsigned.apk ${OUT_DIR}/${NAME}.apk
 else
   export ENVFILE=.env.prod
   ././gradlew assembleProductionRelease
@@ -56,9 +56,9 @@ else
 fi
 
 # Restore build timestamp file
-if [ "${PROD}" == false ]; then
-  mv ./js/app/application/constants/buildTimestamp.js.bak ./js/app/application/constants/buildTimestamp.js
-fi
+# if [ "${PROD}" == false ]; then
+#   mv ./js/app/application/constants/buildTimestamp.js.bak ./js/app/application/constants/buildTimestamp.js
+# fi
 
 if [ -z ${JENKINS_HOME} ]
 then
