@@ -25,10 +25,10 @@ rm -rf "${OUT_DIR}/${NAME}.apk"
 rm -rf "${OUT_DIR}/${NAME}-unsigned.apk"
 
 # Set the build timestamp
-if [ "${PROD}" == false ]; then
-  mv ./js/app/application/constants/buildTimestamp.js ./js/app/application/constants/buildTimestamp.js.bak
-  node scripts/generate-build-timestamp.js
-fi
+# if [ "${PROD}" == false ]; then
+#   mv ./js/app/application/constants/buildTimestamp.js ./js/app/application/constants/buildTimestamp.js.bak
+#   node scripts/generate-build-timestamp.js
+# fi
 
 # Build apk
 cd ${BUILD_DIR}

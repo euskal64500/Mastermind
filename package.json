@@ -8,7 +8,7 @@
     "build:ios:qa": "XCODE_SCHEME='Mastermind_QA' time scripts/ios/build-ios.sh",
     "build:ios-sim": "time scripts/ios/build-ios-sim.sh -sdk iphonesimulator12.1",
     "build:ios-sim:qa": "XCODE_SCHEME='Mastermind_QA' time scripts/ios/build-ios-sim.sh -sdk iphonesimulator12.1",
-    "build:android": "time scripts/android/build-android.sh",
+    "build:android": "time scripts/android/build-android.sh --clean",
     "build:android:prod": "time scripts/android/build-android.sh --clean --production",
     "install:android": "adb install -r dist/android/Mastermind.apk",
     "install:ios": "ideviceinstaller -i dist/ios/Mastermind.ipa",
