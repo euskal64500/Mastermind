@@ -31,10 +31,11 @@ const styles = StyleSheet.create({
 });
 
 const Guess = ({ pegIds, focused }) => (
-  <View style={[
-    styles.container,
-    { borderColor: focused ? 'pink' : 'brown' }
-  ]}
+  <View
+    style={[
+      styles.container,
+      { borderColor: focused ? 'pink' : 'brown' }
+    ]}
   >
     <GuessPegContainer id={pegIds[0]} style={styles.peg} />
     <GuessPegContainer id={pegIds[1]} style={styles.peg} />
